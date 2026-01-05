@@ -1,0 +1,27 @@
+apiVersion: v1
+items:
+- apiVersion: crd.projectcalico.org/v1
+  kind: FelixConfiguration
+  metadata:
+    annotations:
+      operator.tigera.io/bpfEnabled: "false"
+      projectcalico.org/metadata: '{"generation":1,"creationTimestamp":"2025-12-02T21:22:13Z","managedFields":[{"manager":"operator","operation":"Update","apiVersion":"crd.projectcalico.org/v1","time":"2025-12-02T21:22:13Z","fieldsType":"FieldsV1","fieldsV1":{"f:spec":{".":{},"f:bpfLogLevel":{},"f:healthPort":{},"f:nftablesMode":{},"f:vxlanVNI":{}}}}]}'
+    creationTimestamp: "2025-12-02T21:22:13Z"
+    generation: 3
+    name: default
+    resourceVersion: "8091"
+    uid: 21a2e5d2-57a2-482e-82c2-fa91d840f711
+  spec:
+    bpfConnectTimeLoadBalancing: TCP
+    bpfEnabled: false
+    bpfHostNetworkedNATWithoutCTLB: Enabled
+    bpfLogLevel: ""
+    floatingIPs: Disabled
+    healthPort: 9099
+    logSeverityScreen: Info
+    nftablesMode: Disabled
+    reportingInterval: 0s
+    vxlanVNI: 4096
+kind: List
+metadata:
+  resourceVersion: ""

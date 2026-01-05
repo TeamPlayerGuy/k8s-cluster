@@ -1,0 +1,31 @@
+grafana:
+  service:
+    type: NodePort
+    nodePort: 32000
+  resources:
+    requests:
+      memory: 250Mi
+    limits:
+      memory: 500Mi
+  service:
+    type: NodePort
+    nodePort: 32000
+  grafana.ini:
+    database:
+      cache_mode: "private"
+    analytics:
+      reporting_enabled: false
+
+---
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    retention: 24h
+    retentionSize: 1GB
+    resources:
+      requests:
+        memory: 150Mi
+      limits:
+        memory: 300Mi
+    scrapeInterval: 30s
+    evaluationInterval: 30s

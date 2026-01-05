@@ -1,0 +1,7 @@
+service:
+  ui:
+    nodePort: 31101
+    type: NodePort
+persistence:
+  defaultClassReplicaCount: 2
+

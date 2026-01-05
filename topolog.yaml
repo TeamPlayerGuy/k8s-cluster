@@ -1,0 +1,4 @@
+16gbworkers:
+  kubepi16wrk001:
+    IP:
+      password:

@@ -1,0 +1,225 @@
+COMPUTED VALUES:
+accessKey: minio
+additionalAnnotations: {}
+additionalLabels: {}
+affinity: {}
+bucketRoot: ""
+buckets: []
+certsPath: /etc/minio/certs/
+clusterDomain: cluster.local
+configPathmc: /etc/minio/mc/
+consoleIngress:
+  annotations: {}
+  enabled: false
+  hosts:
+  - console.minio-example.local
+  ingressClassName: null
+  labels: {}
+  path: /
+  tls: []
+consoleService:
+  annotations: {}
+  clusterIP: null
+  externalIPs: []
+  externalTrafficPolicy: Cluster
+  loadBalancerIP: null
+  loadBalancerSourceRanges: []
+  nodePort: 32001
+  port: "9001"
+  type: ClusterIP
+containerSecurityContext:
+  readOnlyRootFilesystem: false
+customCommandJob:
+  exitCommand: ""
+  extraVolumeMounts: []
+  extraVolumes: []
+  resources:
+    requests:
+      memory: 128Mi
+  securityContext:
+    enabled: false
+    runAsGroup: 1000
+    runAsUser: 1000
+customCommands: null
+deploymentUpdate:
+  maxSurge: 100%
+  maxUnavailable: 0
+  type: RollingUpdate
+drivesPerNode: 1
+environment: null
+etcd:
+  clientCert: ""
+  clientCertKey: ""
+  corednsPathPrefix: ""
+  endpoints: []
+  pathPrefix: ""
+existingSecret: ""
+extraArgs: []
+extraContainers: []
+extraSecret: null
+extraVolumeMounts: []
+extraVolumes: []
+fullnameOverride: ""
+ignoreChartChecksums: false
+image:
+  pullPolicy: IfNotPresent
+  repository: quay.io/minio/minio
+  tag: RELEASE.2024-12-18T13-15-44Z
+imagePullSecrets: []
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+  - minio-example.local
+  ingressClassName: null
+  labels: {}
+  path: /
+  tls: []
+makeBucketJob:
+  exitCommand: ""
+  resources:
+    requests:
+      memory: 128Mi
+  securityContext:
+    enabled: false
+    runAsGroup: 1000
+    runAsUser: 1000
+makePolicyJob:
+  exitCommand: ""
+  resources:
+    requests:
+      memory: 128Mi
+  securityContext:
+    enabled: false
+    runAsGroup: 1000
+    runAsUser: 1000
+makeServiceAccountJob:
+  exitCommand: ""
+  resources:
+    requests:
+      memory: 128Mi
+  securityContext:
+    enabled: false
+    runAsGroup: 1000
+    runAsUser: 1000
+makeUserJob:
+  exitCommand: ""
+  resources:
+    requests:
+      memory: 128Mi
+  securityContext:
+    enabled: false
+    runAsGroup: 1000
+    runAsUser: 1000
+mcImage:
+  pullPolicy: IfNotPresent
+  repository: quay.io/minio/mc
+  tag: RELEASE.2024-11-21T17-21-54Z
+metrics:
+  serviceMonitor:
+    additionalLabels: {}
+    annotations: {}
+    enabled: false
+    includeNode: false
+    interval: null
+    namespace: null
+    public: true
+    relabelConfigs: {}
+    relabelConfigsCluster: {}
+    scrapeTimeout: null
+minioAPIPort: "9000"
+minioConsolePort: "9001"
+mode: distributed
+mountPath: /export
+nameOverride: ""
+networkPolicy:
+  allowExternal: true
+  egressEntities:
+  - kube-apiserver
+  enabled: false
+  flavor: kubernetes
+nodeSelector: {}
+oidc:
+  claimName: policy
+  claimPrefix: ""
+  clientId: minio
+  clientSecret: ""
+  comment: ""
+  configUrl: https://identity-provider-url/.well-known/openid-configuration
+  displayName: ""
+  enabled: false
+  existingClientIdKey: ""
+  existingClientSecretKey: ""
+  existingClientSecretName: ""
+  redirectUri: https://console-endpoint-url/oauth_callback
+  scopes: openid,profile,email
+persistence:
+  accessMode: ReadWriteOnce
+  annotations: {}
+  enabled: true
+  existingClaim: ""
+  size: 50Gils
+  storageClass: ""
+  subPath: ""
+  volumeName: ""
+podAnnotations: {}
+podDisruptionBudget:
+  enabled: false
+  maxUnavailable: 1
+podLabels: {}
+policies: []
+pools: 1
+postJob:
+  affinity: {}
+  annotations: {}
+  nodeSelector: {}
+  podAnnotations: {}
+  securityContext:
+    enabled: false
+    fsGroup: 1000
+    runAsGroup: 1000
+    runAsUser: 1000
+  tolerations: []
+priorityClassName: ""
+replicas: 16
+resources:
+  requests:
+    memory: 16Gi
+rootPassword: ""
+rootUser: ""
+runtimeClassName: ""
+secrectKey: minio123
+securityContext:
+  enabled: true
+  fsGroup: 1000
+  fsGroupChangePolicy: OnRootMismatch
+  runAsGroup: 1000
+  runAsUser: 1000
+service:
+  annotations: {}
+  clusterIP: null
+  externalIPs: []
+  externalTrafficPolicy: Cluster
+  loadBalancerIP: null
+  loadBalancerSourceRanges: []
+  nodePort: 32000
+  port: "9000"
+  type: ClusterIP
+serviceAccount:
+  create: true
+  name: minio-sa
+statefulSetUpdate:
+  updateStrategy: RollingUpdate
+svcaccts: []
+tls:
+  certSecret: ""
+  enabled: false
+  privateKey: private.key
+  publicCrt: public.crt
+tolerations: []
+topologySpreadConstraints: []
+trustedCertsSecret: ""
+users:
+- accessKey: console
+  policy: consoleAdmin
+  secretKey: console123
