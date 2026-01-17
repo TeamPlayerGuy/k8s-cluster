@@ -5,9 +5,6 @@ grafana:
   resources:
     requests:
       memory: 512Mi
-  service:
-    type: NodePort
-    nodePort: 32000
   grafana.ini:
     database:
       cache_mode: "private"
