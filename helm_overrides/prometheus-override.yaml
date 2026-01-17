@@ -4,9 +4,7 @@ grafana:
     nodePort: 32000
   resources:
     requests:
-      memory: 250Mi
-    limits:
-      memory: 500Mi
+      memory: 512Mi
   service:
     type: NodePort
     nodePort: 32000
@@ -24,8 +22,6 @@ prometheus:
     retentionSize: 1GB
     resources:
       requests:
-        memory: 150Mi
-      limits:
-        memory: 300Mi
+        memory: 512Mi
     scrapeInterval: 30s
     evaluationInterval: 30s
